@@ -1,0 +1,58 @@
+{
+  "name": "otak-clock",
+  "displayName": "otak-clock",
+  "description": "This VSCode extension displays the date and time for two time zones from around the world.",
+  "publisher": "odangoo",
+  "license": "MIT",
+  "icon": "./images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tsuyoshi-otake-system-exe-jp/otak-clock"
+  },
+  "bugs": {
+    "url": "https://github.com/tsuyoshi-otake-system-exe-jp/otak-clock/issues"
+  },
+  "homepage": "https://github.com/tsuyoshi-otake-system-exe-jp/otak-clock#readme",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "otak-clock.selectTimeZone1",
+        "title": "Select Time Zone 1"
+      },
+      {
+        "command": "otak-clock.selectTimeZone2",
+        "title": "Select Time Zone 2"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.90.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.22.0",
+    "@typescript-eslint/parser": "^8.22.0",
+    "eslint": "^9.19.0",
+    "typescript": "^5.7.3",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
