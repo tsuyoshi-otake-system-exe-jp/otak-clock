@@ -185,13 +185,13 @@ function updateClocks() {
     if (timeZone1) {
         const time1 = formatTimeWithTimeZone(now, timeZone1.timeZoneId);
         defaultStatusBar.text = time1;
-        defaultStatusBar.tooltip = `${timeZone1.label} (${timeZone1.timeZoneId})\nUTC${timeZone1.baseUtcOffset >= 0 ? '+' : ''}${timeZone1.baseUtcOffset}:00`;
+        defaultStatusBar.tooltip = `${timeZone1.label} (${timeZone1.timeZoneId})\n${formatDateWithTimeZone(now, timeZone1.timeZoneId)} UTC${timeZone1.baseUtcOffset >= 0 ? '+' : ''}${timeZone1.baseUtcOffset}:00`;
     }
 
     if (timeZone2) {
         const time2 = formatTimeWithTimeZone(now, timeZone2.timeZoneId);
         gmtStatusBar.text = time2;
-        gmtStatusBar.tooltip = `${timeZone2.label} (${timeZone2.timeZoneId})\nUTC${timeZone2.baseUtcOffset >= 0 ? '+' : ''}${timeZone2.baseUtcOffset}:00`;
+        gmtStatusBar.tooltip = `${timeZone2.label} (${timeZone2.timeZoneId})\n${formatDateWithTimeZone(now, timeZone2.timeZoneId)} UTC${timeZone2.baseUtcOffset >= 0 ? '+' : ''}${timeZone2.baseUtcOffset}:00`;
     }
 }
 
@@ -202,6 +202,16 @@ function formatTimeWithTimeZone(date: Date, timeZoneId: string): string {
         minute: '2-digit',
         second: '2-digit',
         hour12: false,
+        timeZone: timeZoneId
+    }).format(date);
+}
+
+// 指定したタイムゾーンでの日付をフォーマットする関数
+function formatDateWithTimeZone(date: Date, timeZoneId: string): string {
+    return new Intl.DateTimeFormat('en-US', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
         timeZone: timeZoneId
     }).format(date);
 }
