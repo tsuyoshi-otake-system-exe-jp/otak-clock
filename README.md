@@ -1,52 +1,67 @@
-<p align="center">
-  <h1 align="center">otak-clock</h1>
-  <p align="center">Dual time-zone clocks on the VS Code status bar.</p>
-</p>
+# Otak Clock
 
----
+This VSCode extension displays the date and time for two time zones from around the world.
 
-This extension displays the current time for two different time zones right in your Visual Studio Code status bar with real-time updates. Whether you’re coordinating with global teams or tracking time across continents, **otak-clock** gives you an at-a-glance view of two selected regions without needing to leave your editor.
+## Features
 
-# Features
-- **Dual Time Zone Display:**  
-  View the current time for two separate time zones simultaneously.
-- **Real-Time Updates:**  
-  Clocks update every second, ensuring you always see the precise time.
-- **Time Zone Selection:**  
-  Easily change either time zone with intuitive commands:
-  - `otak-clock.selectTimeZone1` for the first clock (Default: UTC)
-  - `otak-clock.selectTimeZone2` for the second clock (Default: Asia/Tokyo)
-- **Global Time Zone Support:**  
-  Supports a wide range of regions with correct UTC offsets and automatic Daylight Saving Time adjustments.
+### Time Zone Display
+- Display two different time zones in the status bar
+- Select from a comprehensive list of time zones grouped by region
+- Time format: HH:mm:ss (24-hour)
+- Hover to see detailed timezone information including date
 
-# Usage
-![](images/otak-clock.png)
+### Alarm System
+- Set multiple alarms with custom settings
+- Features:
+  - Flexible time settings (HH:mm format)
+  - Optional labels for alarms
+  - Repeat options (daily, specific days, or one-time)
+  - Custom alarm sounds
+  - Enable/disable individual alarms
 
-1. **Click the desired clock item** in the status bar.
-2. **Select a region** from the list to filter the available time zones.
-3. **Choose your preferred time zone.**  
-   The display updates immediately with the selected time zone’s current time.
+## Usage
 
-You can also access the time zone change commands via the Command Palette (F1):
-- `otak-clock.selectTimeZone1`
-- `otak-clock.selectTimeZone2`
+### Time Zones
+1. Click on either time display in the status bar
+2. Select a region from the dropdown
+3. Choose a specific timezone
 
-## Requirements
-- **Visual Studio Code:** Version 1.90.0 or higher
-- **Node.js:** Utilized as part of the VS Code extension runtime
+### Alarms
+1. Click on the clock icon in the status bar ($(clock)) or use command palette
+2. Select "Set Alarm Time" to create a new alarm
+3. Configure alarm settings:
+   - Time (HH:mm)
+   - Label (optional)
+   - Repeat pattern
+   - Alarm sound
+4. Manage alarms:
+   - List all alarms
+   - Edit existing alarms
+   - Enable/disable alarms
+   - Delete alarms
+
+## Available Commands
+- `Select Time Zone 1`: Change the first time zone
+- `Select Time Zone 2`: Change the second time zone
+- `Set Alarm Time`: Create a new alarm
+- `Toggle Alarm`: Enable/disable an alarm
+- `List Alarms`: View and manage all alarms
+- `Edit Alarm`: Modify alarm settings
+- `Delete Alarm`: Remove an alarm
 
 ## Extension Settings
-This extension configures its behavior exclusively through built-in commands. There are no additional settings exposed in the VS Code settings UI.
+The extension provides customization through VS Code settings:
 
-## Troubleshooting
-If you experience issues with time displays:
-1. Ensure that VS Code is updated to the required version.
-2. Confirm that there are no lingering unsaved changes or interruptions in the extension process.
-3. Try reselecting the time zone via the Command Palette if the display seems unresponsive.
+```json
+{
+  "otakClock.alarmSounds": {
+    "defaultAlarm": "sounds/default.mp3",
+    "bell": "sounds/bell.mp3",
+    "chime": "sounds/chime.mp3",
+    "digital": "sounds/digital.mp3"
+  }
+}
+```
 
 ## License
-MIT License - see the [LICENSE](./LICENSE) file for details.
-
----
-
-For more information, visit the [GitHub repository](https://github.com/tsuyoshi-otake-system-exe-jp/otak-clock).
+MIT

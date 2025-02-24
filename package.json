@@ -33,8 +33,44 @@
       {
         "command": "otak-clock.selectTimeZone2",
         "title": "Select Time Zone 2"
+      },
+      {
+        "command": "otak-clock.setAlarm",
+        "title": "Set Alarm Time"
+      },
+      {
+        "command": "otak-clock.toggleAlarm",
+        "title": "Toggle Alarm"
+      },
+      {
+        "command": "otak-clock.editAlarm",
+        "title": "Edit Alarm"
+      },
+      {
+        "command": "otak-clock.deleteAlarm",
+        "title": "Delete Alarm"
+      },
+      {
+        "command": "otak-clock.listAlarms",
+        "title": "List Alarms"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "Otak Clock",
+      "properties": {
+        "otakClock.alarmSounds": {
+          "type": "object",
+          "default": {
+            "defaultAlarm": "sounds/default.mp3",
+            "bell": "sounds/bell.mp3",
+            "chime": "sounds/chime.mp3",
+            "digital": "sounds/digital.mp3",
+            "ICQ": "sounds/icq-ooh.mp3"
+          },
+          "description": "Available alarm sounds"
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",

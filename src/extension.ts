@@ -1,5 +1,6 @@
 // The module 'vscode' contains the VS Code extensibility API
 import * as vscode from 'vscode';
+import { AlarmManager } from './alarm/AlarmManager';
 
 let defaultStatusBar: vscode.StatusBarItem;
 let gmtStatusBar: vscode.StatusBarItem;
@@ -102,8 +103,20 @@ export function activate(context: vscode.ExtensionContext) {
         }
     });
 
+    // アラームマネージャーを初期化
+    const alarmManager = new AlarmManager(context, [defaultStatusBar, gmtStatusBar]);
+
+    // アラーム関連のコマンドを登録
+    let disposableSetAlarm = vscode.commands.registerCommand('otak-clock.setAlarm', () => {
+        alarmManager.setAlarm();
+    });
+    let disposableToggleAlarm = vscode.commands.registerCommand('otak-clock.toggleAlarm', () => {
+        vscode.window.showInformationMessage('Use the command palette to manage alarms');
+    }); 
+
     context.subscriptions.push(disposable1);
     context.subscriptions.push(disposable2);
+    context.subscriptions.push(disposableSetAlarm, disposableToggleAlarm, alarmManager);
 
     // 初期値を設定
     const initialTimeZone1 = extensionContext.globalState.get<TimeZoneInfo>('timeZone1');
@@ -125,6 +138,9 @@ export function activate(context: vscode.ExtensionContext) {
 
     // 1秒ごとに更新
     updateInterval = setInterval(updateClocks, 1000);
+    
+    // アラームのチェックも毎秒実行
+    setInterval(() => alarmManager.checkAlarms(), 1000);
 }
 
 // This method is called when your extension is deactivated
