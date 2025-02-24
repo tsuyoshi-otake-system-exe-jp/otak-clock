@@ -1,32 +1,22 @@
 # Change Log
 
-## [1.0.0] - 2025-02-18
+All notable changes to the "otak-clock" extension will be documented in this file.
+
+## [1.1.0] - 2024-02-24
 
 ### Added
-- Dual time zone display in status bar
-- Time zone selection commands (`otak-clock.selectTimeZone1` and `otak-clock.selectTimeZone2`)
-- Global time zone support (Default: UTC, Asia/Tokyo)
-- Real-time clock updates (every second)
-- Command Palette integration for time zone changes
-- Time zone selection UI with region filtering
-- Automatic Daylight Saving Time adjustments
+- Single alarm feature with visual notifications
+- Status bar alarm control ($(bell) icon)
+- Simple time-based alarm settings (HH:mm format)
+- Auto-dismissing notifications (5 seconds)
+- Visual feedback with status bar flash effect
 
-### Features
-- Simple and intuitive operation
-- Smart integration with status bar
-- Time difference management for global team coordination
-- Immediate settings application
-- High-precision real-time clock display
+### Changed
+- Simplified time zone display with date information
+- Improved timezone selection interface
 
-### Notes
-- Requires Visual Studio Code 1.90.0 or higher
-- Uses Node.js runtime
-- No restart required for settings changes
+## [1.0.0] - Initial Release
 
-## [0.0.1] - 2025-02-17
-
-### Added
-- Initial release of Otak Clock extension
-- Basic dual time zone display functionality
-- Status bar clock integration
-- Simple time zone selection feature
+- Dual timezone display in status bar
+- Region-based timezone selection
+- Detailed timezone information on hover
