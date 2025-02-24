@@ -1,46 +1,93 @@
-# Otak Clock
+<p align="center">
+  <h1 align="center">otak-clock v1.1.1</h1>
+  <p align="center">
+    VSCode extension for displaying dual time zones with alarm functionality - Supports all global time zones with intuitive interface and visual notifications.
+  </p>
+</p>
 
-A VSCode extension that displays the date and time for two time zones from around the world, with a simple alarm feature.
-
-## Features
-
-### Time Zone Display
-- Display two different time zones in the status bar
-- Select from a comprehensive list of time zones grouped by region
-- Time format: HH:mm:ss (24-hour)
-- Hover to see detailed timezone information including date
-
-### Alarm Feature
-- Set a single alarm with visual notifications
-- Simple time setting (HH:mm format)
-- Status bar display shows current alarm time
-- Visual feedback when alarm triggers
-- Auto-dismissing notifications
+---
 
 ## Usage
 
-### Time Zones
+For Time Zone Display:
+
+![Time Zone Display](images/otak-clock.png)
+
 1. Click on either time display in the status bar
-2. Select a region from the dropdown
-3. Choose a specific timezone
+2. Select a region from the dropdown menu
+3. Choose a specific timezone from the available options
+4. The extension will:
+   - Display the selected time zone in 24-hour format (HH:mm:ss)
+   - Show detailed timezone information on hover
+   - Update in real-time
+   - Maintain your preferences between sessions
 
-### Setting an Alarm
+For Setting Alarms:
+
+![Extension Icon](images/icon.png)
+
 1. Click the bell icon ($(bell)) in the status bar
-2. Enter the desired time in HH:mm format (e.g., "09:00")
-3. The alarm will trigger with visual notifications at the specified time
+2. Enter your desired alarm time in HH:mm format
+3. The alarm will:
+   - Display in the status bar for quick reference
+   - Trigger visual notifications at the specified time
+   - Auto-dismiss after notification
+   - Maintain a simple, one-alarm-at-a-time system
 
-### Status Bar Indicators
-- $(bell) HH:mm - Active alarm and its time
-- $(bell) $(add) - No active alarm, click to set
+## Features
+
+otak-clock is a powerful VSCode extension that provides dual time zone display and alarm functionality for developers working across different time zones.
+
+### Key Features
+
+- **Dual Time Zone Display**:
+  - Real-time display of two different time zones
+  - Comprehensive list of time zones grouped by region
+  - 24-hour time format (HH:mm:ss)
+  - Detailed timezone information on hover
+  - Persistent timezone preferences
+
+- **Simple Alarm System**:
+  - Single alarm with visual notifications
+  - Easy time setting (HH:mm format)
+  - Status bar alarm time display
+  - Visual notification feedback
+  - Auto-dismissing notifications
+
+- **Status Bar Integration**:
+  - Clean and intuitive interface
+  - Quick access to time zone selection
+  - Clear alarm status indicators
+  - Efficient screen space usage
+
+## Commands
+
+- **`otak-clock.selectTimeZone1`**: Change the first time zone
+- **`otak-clock.selectTimeZone2`**: Change the second time zone
+- **`otak-clock.setAlarm`**: Set a new alarm time
 
 ## Extension Settings
 
-No additional configuration required. All features are accessible through the status bar interface.
+This extension is designed to be simple and user-friendly with no additional configuration required. All features are accessible through the status bar interface:
 
-## Commands
-- `Select Time Zone 1`: Change the first time zone
-- `Select Time Zone 2`: Change the second time zone
-- `Set Alarm Time`: Set a new alarm time
+- Time zone displays can be clicked to change settings
+- Alarm icon shows current status and settings
+- Visual indicators for active alarms
+
+### Status Bar Indicators
+
+- $(bell) HH:mm - Shows active alarm and its time
+- $(bell) $(add) - Indicates no active alarm, clickable to set
+- HH:mm:ss - Current time in selected time zones
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
 
 ## License
-MIT
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+
+For more information, visit the [GitHub repository](https://github.com/tsuyoshi-otake-system-exe-jp/otak-clock).
