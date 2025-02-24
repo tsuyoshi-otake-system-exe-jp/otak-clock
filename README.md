@@ -1,5 +1,5 @@
 <p align="center">
-  <h1 align="center">otak-clock v1.1.1</h1>
+  <h1 align="center">otak-clock</h1>
   <p align="center">
     VSCode extension for displaying dual time zones with alarm functionality - Supports all global time zones with intuitive interface and visual notifications.
   </p>
@@ -23,8 +23,6 @@ For Time Zone Display:
    - Maintain your preferences between sessions
 
 For Setting Alarms:
-
-![Extension Icon](images/icon.png)
 
 1. Click the bell icon ($(bell)) in the status bar
 2. Enter your desired alarm time in HH:mm format
