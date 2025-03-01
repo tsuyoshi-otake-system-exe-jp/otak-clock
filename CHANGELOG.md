@@ -2,6 +2,11 @@
 
 All notable changes to the "otak-clock" extension will be documented in this file.
 
+## [1.1.4] - 2025-03-01
+
+### Updated
+- Updated README.md documentation
+
 ## [1.1.3] - 2024-02-24
 
 ### Changed
